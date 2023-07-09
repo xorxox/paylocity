@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>todorov.interview</groupId>
+    <artifactId>paylocity</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
+    <name>paylocity</name>
+    <description>paylocity</description>
+
+    <modules>
+        <module>backend</module>
+        <module>frontend</module>
+    </modules>
+
+    <properties>
+        <!-- Common -->
+        <revision>0.0.1-SNAPSHOT</revision>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Spring -->
+        <spring.boot.version>3.0.6</spring.boot.version>
+        <spring.boot.context.version>6.0.9</spring.boot.context.version>
+        <spring.boot.test.version>3.1.0</spring.boot.test.version>
+        <spring.test.version>6.0.9</spring.test.version>
+
+        <!-- Cucumber -->
+        <cucumber.version>7.8.1</cucumber.version>
+
+        <!-- JUnit -->
+        <junit.version>4.13.2</junit.version>
+
+        <!-- REST Assured -->
+        <rest.assured.version>4.3.0</rest.assured.version>
+
+        <!-- Webdriver Manager -->
+        <bonigarcia.webdrivermanager.verion>5.3.3</bonigarcia.webdrivermanager.verion>
+
+        <!-- Selenium -->
+        <selenium.version>4.10.0</selenium.version>
+
+        <!-- Http -->
+        <httpclient5.version>5.2.1</httpclient5.version>
+        <httpcore5.version>5.2.1</httpcore5.version>
+
+        <!-- Awaitility -->
+        <awaitility.version>4.2.0</awaitility.version>
+
+        <!-- Logger -->
+        <log4j2.version>2.19.0</log4j2.version>
+
+        <!-- Lombok -->
+        <lombok.version>1.18.24</lombok.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Project modules -->
+            <dependency>
+                <groupId>todorov.interview.paylocity</groupId>
+                <artifactId>backend</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>todorov.interview.paylocity</groupId>
+                <artifactId>frontend</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- Spring -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <scope>runtime</scope>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.boot.context.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-test</artifactId>
+                <version>${spring.boot.test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.test.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring.test.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <!-- Cucumber -->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-core</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-spring</artifactId>
+                <version>${cucumber.version}</version>
+            </dependency>
+
+            <!-- JUnit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+            </dependency>
+
+            <!-- REST Assured -->
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>${rest.assured.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured-common</artifactId>
+                <version>${rest.assured.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>xml-path</artifactId>
+                <version>${rest.assured.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>json-path</artifactId>
+                <version>${rest.assured.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>json-schema-validator</artifactId>
+                <version>${rest.assured.version}</version>
+            </dependency>
+
+            <!-- Webdriver Manager -->
+            <dependency>
+                <groupId>io.github.bonigarcia</groupId>
+                <artifactId>webdrivermanager</artifactId>
+                <version>${bonigarcia.webdrivermanager.verion}</version>
+            </dependency>
+
+            <!-- Selenium -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-support</artifactId>
+                <version>${selenium.version}</version>
+            </dependency>
+
+            <!-- Http -->
+            <dependency>
+                <groupId>org.apache.httpcomponents.client5</groupId>
+                <artifactId>httpclient5</artifactId>
+                <version>${httpclient5.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents.core5</groupId>
+                <artifactId>httpcore5</artifactId>
+                <version>${httpcore5.version}</version>
+            </dependency>
+
+            <!-- Awaitility -->
+            <dependency>
+                <groupId>org.awaitility</groupId>
+                <artifactId>awaitility</artifactId>
+                <version>${awaitility.version}</version>
+            </dependency>
+
+            <!-- Injections -->
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>4.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax</groupId>
+                <artifactId>javaee-api</artifactId>
+                <version>8.0.1</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- Logger -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- Json builder -->
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20230618</version>
+            </dependency>
+
+            <!-- Jakarta -->
+            <dependency>
+                <groupId>jakarta.xml.bind</groupId>
+                <artifactId>jakarta.xml.bind-api</artifactId>
+                <version>2.3.2</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <argLine>-Xmx1048m</argLine>
+                    <excludes>
+                        <exclude>none</exclude>
+                    </excludes>
+                    <includes>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <include>**/${cuke}.java</include>
+                        <!--<include>**/RunBackendTestCuke.java</include>**/cucumber/*.java-->
+                        <!--TO RUN: mvn test -Dcuke=RunBackendTestCuke-->
+                    </includes>
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <!--try this: testFailureIgnore or: mvn test -Dcuke=RunBackendTestCuke  -Dmaven.test.failure.ignore=true or -fn,fail-never NEVER fail the build, regardless of project result -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
